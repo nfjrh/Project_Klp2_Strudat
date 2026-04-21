@@ -1,8 +1,7 @@
 # PROJECT AKHIR STRUKTUR DATA
 ## Kelompok 2
 
-###  Dosen Pengampu
-Kurnia Prima Putra, S.Kom., M.T
+###  Dosen Pengampu : Kurnia Prima Putra, S.Kom., M.T
 
 ---
 
