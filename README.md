@@ -1,12 +1,12 @@
-# 📊 PROJECT AKHIR STRUKTUR DATA
-## 👥 Kelompok 2
+# PROJECT AKHIR STRUKTUR DATA
+## Kelompok 2
 
-### 👨‍🏫 Dosen Pengampu
+###  Dosen Pengampu
 Kurnia Prima Putra, S.Kom., M.T
 
 ---
 
-## 👤 Anggota Kelompok
+##  Anggota Kelompok 02
 1. Muhammad Akmal Hidayat  
 2. Nurul Fajrih  
 3. Muh. Fadil Juliansyah  
@@ -18,31 +18,8 @@ Kurnia Prima Putra, S.Kom., M.T
 ## 📌 Deskripsi Project
 Project ini dibuat untuk memenuhi penugasan akhir dari Mata Kuliah **Struktur Data**.  
 Dalam project ini, kami mengimplementasikan berbagai konsep dasar struktur data dan algoritma yang telah dipelajari selama perkuliahan.
-
----
-
 ## ⚙️ Konsep yang Diimplementasikan
-
-### 🗂️ Struktur Data
-- Array  
-- Linked List  
-- Binary Search Tree  
-
-### 🔍 Pencarian Data
-- Linear Search  
-- Binary Search  
-
-### 🔃 Pengurutan Data
-- Insertion Sort  
-- Merge Sort  
-
-### 🌐 Relasi Antar Data
-- Graph  
-  - Adjacency Matrix  
-  - Adjacency List  
-
-Contoh implementasi:
-- Jaringan  
-- Peta rute  
-- Relasi antar objek  
-
+- Pengelolaan data menggunakan **Array, Linked List, dan Binary Search Tree**  
+- Pencarian data menggunakan **Linear Search dan Binary Search**  
+- Pengurutan data menggunakan **Insertion Sort dan Merge Sort**  
+- Relasi antar data menggunakan **Graph (Adjacency Matrix / Adjacency List)**  
