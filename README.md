@@ -6,7 +6,7 @@ Kurnia Prima Putra, S.Kom., M.T
 
 ---
 
-##  Anggota Kelompok 02
+##  Nama Anggota
 1. Muhammad Akmal Hidayat  
 2. Nurul Fajrih  
 3. Muh. Fadil Juliansyah  
