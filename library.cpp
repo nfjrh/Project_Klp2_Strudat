@@ -18,7 +18,5 @@ string lokasi[45] = {
 "SDN Antang 1", "SMPN 19 Makassar", "SMAN 10 Makassar",
 "SDN Borong", "SMPN 17 Makassar", "SMA LPP UMI",
 "SDN Malengkeri 1", "SMPN 18 Makassar", "SMAN 4 Makassar"
-
-"SDN Malengkeri 2", "SMPN 20 Makassar", "SMAN 5 Makassar"
 };
 
