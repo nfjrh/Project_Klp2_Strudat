@@ -7,7 +7,3 @@ struct Buku {
     int tahun;
     int stok;
 };
-extern vector<Buku> daftarBuku;
-
-// ===== SEKOLAH =====
-extern string lokasi[45];
