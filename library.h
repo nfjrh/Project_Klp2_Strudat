@@ -6,4 +6,5 @@ struct Buku {
     string judul, penulis;
     int tahun;
     int stok;
+    int s;
 };
