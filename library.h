@@ -8,3 +8,7 @@ struct Buku {
     int stok;
     int s;
 };
+
+// ===== ARRAY =====
+extern vector<Buku> daftarBuku;
+extern string lokasi[45];
