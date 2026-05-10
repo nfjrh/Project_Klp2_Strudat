@@ -49,3 +49,8 @@ bool kembalikanBuku(const string&);
 void insertionSort(int);
 void mergeSort(vector<Buku>&,int,int,int);
 void autoSort(int);
+
+// ===== GRAPH =====
+void initGraph();
+void tampilLokasi();
+void dijkstra(int,int);
