@@ -64,3 +64,15 @@ bool kembalikanBuku(const string& j){
          cout<<"Buku tidak ditemukan!"<<endl;
     return false;
 }
+
+// ===== LINKED LIST =====
+void tambahRiwayat(string n,string j,string s){
+    Node* baru=new Node{n,j,s,false,NULL};
+    if(!head) head=baru;
+    else{
+        Node* t=head;
+        while(t->next)
+            t=t->next;
+        t->next=baru;
+    }
+}
