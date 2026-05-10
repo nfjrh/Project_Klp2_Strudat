@@ -44,3 +44,8 @@ void tampilBuku();
 void tambahBuku();
 bool pinjamBuku(const string&);
 bool kembalikanBuku(const string&);
+
+// ===== SORT =====
+void insertionSort(int);
+void mergeSort(vector<Buku>&,int,int,int);
+void autoSort(int);
