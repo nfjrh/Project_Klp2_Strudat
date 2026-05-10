@@ -19,3 +19,16 @@ string lokasi[45] = {
 "SDN Borong", "SMPN 17 Makassar", "SMA LPP UMI",
 "SDN Malengkeri 1", "SMPN 18 Makassar", "SMAN 4 Makassar"
 };
+
+//====== TAMBAH BUKU ========
+void tambahBuku(){
+    Buku b;
+    cout<<"Judul :"; cin>>ws; getline(cin,b.judul);
+    cout<<"Penulis : "; getline(cin,b.penulis);
+    cout<<"Tahun   : "; cin>>b.tahun;
+    cout<<"Stok    : "; cin>>b.stok;
+
+    daftarBuku.push_back(b);
+    root=insertBST(root,b.judul);
+    cout<<"Buku berhasil ditambahkan!"<<endl;
+}
