@@ -20,3 +20,14 @@ struct Node{
 
 void tambahRiwayat(string,string,string);
 void tampilRiwayat();
+
+// ===== BST =====
+struct BST{
+    string judul;
+    BST *kiri,*kanan;
+};
+
+extern BST* root;
+
+BST* insertBST(BST*,string);
+bool cariBST(BST*,string);
