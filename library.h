@@ -34,3 +34,6 @@ bool cariBST(BST*,string);
 
 // ===== LINEAR SEARCH =====
 int linearSearchPenulis(string);
+
+// ===== BINARY SEARCH =====
+int binarySearchStok(int);
