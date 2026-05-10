@@ -32,3 +32,19 @@ void tambahBuku(){
     root=insertBST(root,b.judul);
     cout<<"Buku berhasil ditambahkan!"<<endl;
 }
+// ===== PINJAM BUKU =====
+bool pinjamBuku(const string& j){
+    for(auto &b:daftarBuku)
+        if(b.judul==j){
+            if(b.stok>0){
+                b.stok--;
+                cout<<"Buku berhasil dipinjam!"<<endl;
+                cout<<"Sisa stok \""<<b.judul<<"\" : "<<b.stok<<endl;
+                return true;
+            }
+            cout<<"Stok buku habis!"<<endl;
+            return false;
+        }
+        cout<<"Buku tidak ditemukan!"<<endl;
+    return false;
+}
