@@ -31,3 +31,6 @@ extern BST* root;
 
 BST* insertBST(BST*,string);
 bool cariBST(BST*,string);
+
+// ===== LINEAR SEARCH =====
+int linearSearchPenulis(string);
