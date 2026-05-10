@@ -37,3 +37,10 @@ int linearSearchPenulis(string);
 
 // ===== BINARY SEARCH =====
 int binarySearchStok(int);
+
+// ===== BUKU =====
+void initDataBuku();
+void tampilBuku();
+void tambahBuku();
+bool pinjamBuku(const string&);
+bool kembalikanBuku(const string&);
