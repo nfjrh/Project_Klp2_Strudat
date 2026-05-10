@@ -106,3 +106,10 @@ bool cariBST(BST* n,string j){
         return cariBST(n->kiri,j);
     return cariBST(n->kanan,j);
 }
+// ===== LINEAR SEARCH =====
+int linearSearchPenulis(string key){
+    for(int i=0;i<daftarBuku.size();i++)
+        if(daftarBuku[i].penulis==key)
+            return i;
+    return -1;
+}
