@@ -48,3 +48,19 @@ bool pinjamBuku(const string& j){
         cout<<"Buku tidak ditemukan!"<<endl;
     return false;
 }
+// ===== KEMBALIKAN BUKU =====
+bool kembalikanBuku(const string& j){
+    for(auto &b:daftarBuku)
+        if(b.judul==j){
+            b.stok++;
+            for(Node* t=head;t;t=t->next)
+                if(t->judul==j && !t->kembali){
+                    t->kembali=true;
+                    break;
+                }
+                 cout<<"Buku berhasil dikembalikan!"<<endl;
+            return true;
+        }
+         cout<<"Buku tidak ditemukan!"<<endl;
+    return false;
+}
