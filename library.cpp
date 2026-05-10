@@ -88,3 +88,21 @@ void tampilRiwayat(){
         cout<<"----------------------------------------"<<endl;
     }
 }
+// ===== BST =====
+BST* insertBST(BST* n,string j){
+    if(!n) return new BST{j,NULL,NULL};
+    if(j<n->judul)
+        n->kiri=insertBST(n->kiri,j);
+    else
+        n->kanan=insertBST(n->kanan,j);
+    return n;
+}
+
+bool cariBST(BST* n,string j){
+    if(!n) return false;
+    if(n->judul==j)
+        return true;
+    if(j<n->judul)
+        return cariBST(n->kiri,j);
+    return cariBST(n->kanan,j);
+}
