@@ -76,3 +76,15 @@ void tambahRiwayat(string n,string j,string s){
         t->next=baru;
     }
 }
+void tampilRiwayat(){
+    cout<<"================ RIWAYAT ================"<<endl;
+    for(Node* t=head;t;t=t->next){
+        cout<<"Nama     : "<<t->nama<<endl;
+        cout<<"Sekolah  : "<<t->sekolah<<endl;
+        cout<<"Buku     : "<<t->judul<<endl;
+        cout<<"Status   : "
+            <<(t->kembali?"Sudah dikembalikan":"Belum dikembalikan")
+            <<endl;
+        cout<<"----------------------------------------"<<endl;
+    }
+}
