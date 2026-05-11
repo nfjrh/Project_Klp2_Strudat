@@ -174,4 +174,38 @@ int linearSearchPenulis(string key){
             return i;
     return -1;
 }
->>>>>>> 1b95656a5eed8d60315d0cb989944b3e0dd820f2
+
+// ===== BINARY SEARCH =====
+int binarySearchStok(int key){
+    vector<Buku> t=daftarBuku;
+    sort(t.begin(),t.end(),[](Buku a,Buku b){
+        return a.stok<b.stok;
+    });
+    int l=0,r=t.size()-1;
+    while(l<=r){
+        int m=(l+r)/2;
+        if(t[m].stok==key)
+            return m;
+        else if(t[m].stok<key)
+            l=m+1;
+        else
+            r=m-1;
+    }
+    return -1;
+}
+
+// ===== INSERTION SORT =====
+void insertionSort(int mode){
+    for(int i=1;i<daftarBuku.size();i++){
+        Buku k=daftarBuku[i];
+        int j=i-1;
+        while(j>=0 && (
+            (mode==1 && daftarBuku[j].tahun>k.tahun) ||
+            (mode==2 && daftarBuku[j].tahun<k.tahun)
+        )){
+            daftarBuku[j+1]=daftarBuku[j];
+            j--;
+        }
+        daftarBuku[j+1]=k;
+    }
+}
