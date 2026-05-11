@@ -19,3 +19,97 @@ string lokasi[45] = {
 "SDN Borong", "SMPN 17 Makassar", "SMA LPP UMI",
 "SDN Malengkeri 1", "SMPN 18 Makassar", "SMAN 4 Makassar"
 };
+
+//====== TAMBAH BUKU ========
+void tambahBuku(){
+    Buku b;
+    cout<<"Judul :"; cin>>ws; getline(cin,b.judul);
+    cout<<"Penulis : "; getline(cin,b.penulis);
+    cout<<"Tahun   : "; cin>>b.tahun;
+    cout<<"Stok    : "; cin>>b.stok;
+
+    daftarBuku.push_back(b);
+    root=insertBST(root,b.judul);
+    cout<<"Buku berhasil ditambahkan!"<<endl;
+}
+// ===== PINJAM BUKU =====
+bool pinjamBuku(const string& j){
+    for(auto &b:daftarBuku)
+        if(b.judul==j){
+            if(b.stok>0){
+                b.stok--;
+                cout<<"Buku berhasil dipinjam!"<<endl;
+                cout<<"Sisa stok \""<<b.judul<<"\" : "<<b.stok<<endl;
+                return true;
+            }
+            cout<<"Stok buku habis!"<<endl;
+            return false;
+        }
+        cout<<"Buku tidak ditemukan!"<<endl;
+    return false;
+}
+// ===== KEMBALIKAN BUKU =====
+bool kembalikanBuku(const string& j){
+    for(auto &b:daftarBuku)
+        if(b.judul==j){
+            b.stok++;
+            for(Node* t=head;t;t=t->next)
+                if(t->judul==j && !t->kembali){
+                    t->kembali=true;
+                    break;
+                }
+                 cout<<"Buku berhasil dikembalikan!"<<endl;
+            return true;
+        }
+         cout<<"Buku tidak ditemukan!"<<endl;
+    return false;
+}
+
+// ===== LINKED LIST =====
+void tambahRiwayat(string n,string j,string s){
+    Node* baru=new Node{n,j,s,false,NULL};
+    if(!head) head=baru;
+    else{
+        Node* t=head;
+        while(t->next)
+            t=t->next;
+        t->next=baru;
+    }
+}
+void tampilRiwayat(){
+    cout<<"================ RIWAYAT ================"<<endl;
+    for(Node* t=head;t;t=t->next){
+        cout<<"Nama     : "<<t->nama<<endl;
+        cout<<"Sekolah  : "<<t->sekolah<<endl;
+        cout<<"Buku     : "<<t->judul<<endl;
+        cout<<"Status   : "
+            <<(t->kembali?"Sudah dikembalikan":"Belum dikembalikan")
+            <<endl;
+        cout<<"----------------------------------------"<<endl;
+    }
+}
+// ===== BST =====
+BST* insertBST(BST* n,string j){
+    if(!n) return new BST{j,NULL,NULL};
+    if(j<n->judul)
+        n->kiri=insertBST(n->kiri,j);
+    else
+        n->kanan=insertBST(n->kanan,j);
+    return n;
+}
+
+bool cariBST(BST* n,string j){
+    if(!n) return false;
+    if(n->judul==j)
+        return true;
+    if(j<n->judul)
+        return cariBST(n->kiri,j);
+    return cariBST(n->kanan,j);
+}
+// ===== LINEAR SEARCH =====
+int linearSearchPenulis(string key){
+    for(int i=0;i<daftarBuku.size();i++)
+        if(daftarBuku[i].penulis==key)
+            return i;
+    return -1;
+}
