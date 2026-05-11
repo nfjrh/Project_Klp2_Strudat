@@ -209,3 +209,102 @@ void insertionSort(int mode){
         daftarBuku[j+1]=k;
     }
 }
+// ===== MERGE SORT =====
+void merge(vector<Buku>&a,int l,int m,int r,int mode){
+    vector<Buku> t;
+    int i=l,j=m+1;
+    while(i<=m && j<=r){
+        if((mode==1 && a[i].tahun<a[j].tahun) ||
+           (mode==2 && a[i].tahun>a[j].tahun))
+            t.push_back(a[i++]);
+        else
+            t.push_back(a[j++]);
+    }
+    while(i<=m) t.push_back(a[i++]);
+    while(j<=r) t.push_back(a[j++]);
+    for(int k=0;k<t.size();k++)
+        a[l+k]=t[k];
+}
+
+void mergeSort(vector<Buku>&a,int l,int r,int mode){
+    if(l>=r) return;
+    int m=(l+r)/2;
+    mergeSort(a,l,m,mode);
+    mergeSort(a,m+1,r,mode);
+    merge(a,l,m,r,mode);
+}
+
+// ===== AUTO SORT =====
+void autoSort(int mode){
+    if(daftarBuku.size()<=20){
+        insertionSort(mode);
+        cout<<"Menggunakan Insertion Sort"<<endl;
+    } else{
+        mergeSort(daftarBuku,0,daftarBuku.size()-1,mode);
+        cout<<"Menggunakan Merge Sort"<<endl;
+    }
+    cout<<(mode==1?
+    "Diurutkan: Lama -> Baru":
+    "Diurutkan: Baru -> Lama")<<endl;
+}
+
+// ===== GRAPH =====
+typedef pair<int,int> pii;
+const int V=45;
+vector<pii> g[V];
+
+void addEdge(int u,int v,int w){
+    g[u].push_back({v,w});
+    g[v].push_back({u,w});
+}
+
+// ===== INIT GRAPH =====
+void initGraph(){
+    for(int i=0;i<45;i+=3){
+        addEdge(i,i+1,1);
+        addEdge(i+1,i+2,1);
+    }
+    for(int i=0;i<42;i+=3)
+        addEdge(i+2,i+3,3);
+}
+
+// ===== TAMPIL LOKASI =====
+void tampilLokasi(){
+    for(int i=0;i<V;i++)
+        cout<<"["<<i<<"] "<<lokasi[i]<<endl;
+}
+
+// ===== DIJKSTRA =====
+void dijkstra(int s,int t){
+    vector<int>d(V,INT_MAX),p(V,-1);
+    priority_queue<pii,vector<pii>,greater<pii>> pq;
+    d[s]=0;
+    pq.push({0,s});
+    while(!pq.empty()){
+        int u=pq.top().second;
+        pq.pop();
+        for(auto e:g[u]){
+            int v=e.first,w=e.second;
+            if(d[u]+w<d[v]){
+                d[v]=d[u]+w;
+                p[v]=u;
+                pq.push({d[v],v});
+            }
+        }
+    }
+    vector<int> path;
+
+    for(int v=t;v!=-1;v=p[v])
+        path.push_back(v);
+    reverse(path.begin(),path.end());
+    cout<<"========== RUTE =========="<<endl;
+    for(int i=0;i<path.size();i++)
+        cout<<" -> "<<lokasi[path[i]]<<endl;
+    int jarak=d[t];
+    int waktu=(jarak*60)/30;
+    
+    cout<<"=========================="<<endl;
+    cout<<"Jumlah Sekolah : "<<path.size()<<endl;
+    cout<<"Total Jarak    : "<<jarak<<" km"<<endl;
+    cout<<"Estimasi Waktu : "<<waktu<<" menit"<<endl;
+}
