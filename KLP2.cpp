@@ -2,8 +2,6 @@
 using namespace std;
 
 int main() {
-    cout << "Hello, World!" << endl;
-    cout << "Welcome to KLP2!" << endl; 
     cout << "Hello, Everyone!" << endl;
     cout << "Welcome to Kelompok 2!" << endl;
     cout << "Our Members :" << endl;
