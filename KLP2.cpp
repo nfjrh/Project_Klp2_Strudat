@@ -2,10 +2,8 @@
 using namespace std;
 
 int main() {
-<<<<<<< HEAD
     cout << "Hello, World!" << endl;
     cout << "Welcome to KLP2!" << endl; 
-=======
     cout << "Hello, Everyone!" << endl;
     cout << "Welcome to Kelompok 2!" << endl;
     cout << "Our Members :" << endl;
@@ -19,6 +17,5 @@ int main() {
     cout << "   NIM : 250210500025 " << endl;
 
     cout << "Thank you!" << endl;
->>>>>>> 1b95656a5eed8d60315d0cb989944b3e0dd820f2
     return 0;
 }
