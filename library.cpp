@@ -1,7 +1,6 @@
 #include "library.h"
 #include <iomanip>
 
-<<<<<<< HEAD
 // ===== ARRAY =====
 vector<Buku> daftarBuku;
 BST* root=NULL;
@@ -61,7 +60,7 @@ void initDataBuku(){
     {"Thinking Fast and Slow","Daniel Kahneman",2011,4}
     };
 }
-=======
+
 // ===== SEKOLAH =====
 string lokasi[45] = {
 "SDN Inpres Perintis Kemerdekaan", "SMPN 30 Makassar", "SMAN 21 Makassar",
