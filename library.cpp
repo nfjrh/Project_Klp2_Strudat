@@ -61,6 +61,23 @@ void initDataBuku(){
     };
 }
 
+// ===== TAMPIL BUKU =====
+void tampilBuku(){
+    cout<<"=================================================================================================="<<endl;
+    cout<<left<<setw(5)<<"No"<<setw(50)<<"Judul"<<setw(28)<<"Penulis"
+        <<setw(8)<<"Tahun"<<setw(10)<<"Stok"<<endl;
+    cout<<"=================================================================================================="<<endl;
+
+    for(int i=0;i<daftarBuku.size();i++)
+        cout<<setw(5)<<i+1
+            <<setw(50)<<daftarBuku[i].judul
+            <<setw(28)<<daftarBuku[i].penulis
+            <<setw(8)<<daftarBuku[i].tahun
+            <<setw(10)<<daftarBuku[i].stok<<endl;
+    cout<<"=================================================================================================="<<endl;
+    cout<<"Total Buku: "<<daftarBuku.size()<<endl;
+}
+
 //====== TAMBAH BUKU ========
 void tambahBuku(){
     Buku b;
@@ -73,6 +90,7 @@ void tambahBuku(){
     root=insertBST(root,b.judul);
     cout<<"Buku berhasil ditambahkan!"<<endl;
 }
+
 // ===== PINJAM BUKU =====
 bool pinjamBuku(const string& j){
     for(auto &b:daftarBuku)
@@ -89,6 +107,7 @@ bool pinjamBuku(const string& j){
         cout<<"Buku tidak ditemukan!"<<endl;
     return false;
 }
+
 // ===== KEMBALIKAN BUKU =====
 bool kembalikanBuku(const string& j){
     for(auto &b:daftarBuku)
@@ -117,6 +136,7 @@ void tambahRiwayat(string n,string j,string s){
         t->next=baru;
     }
 }
+
 void tampilRiwayat(){
     cout<<"================ RIWAYAT ================"<<endl;
     for(Node* t=head;t;t=t->next){
@@ -129,6 +149,7 @@ void tampilRiwayat(){
         cout<<"----------------------------------------"<<endl;
     }
 }
+
 // ===== BST =====
 BST* insertBST(BST* n,string j){
     if(!n) return new BST{j,NULL,NULL};
@@ -147,6 +168,7 @@ bool cariBST(BST* n,string j){
         return cariBST(n->kiri,j);
     return cariBST(n->kanan,j);
 }
+
 // ===== LINEAR SEARCH =====
 int linearSearchPenulis(string key){
     for(int i=0;i<daftarBuku.size();i++)
@@ -189,6 +211,7 @@ void insertionSort(int mode){
         daftarBuku[j+1]=k;
     }
 }
+
 // ===== MERGE SORT =====
 void merge(vector<Buku>&a,int l,int m,int r,int mode){
     vector<Buku> t;
