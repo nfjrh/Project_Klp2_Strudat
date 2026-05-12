@@ -54,3 +54,5 @@ void autoSort(int);
 void initGraph();
 void tampilLokasi();
 void dijkstra(int,int);
+
+//Testetstetstetetet
